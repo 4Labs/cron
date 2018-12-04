@@ -1,5 +1,5 @@
 #!/bin/sh
 
-cp /home/docker/cron.d/. /etc/cron.d/
+cp -r /home/docker/cron.d/. /etc/cron.d/
 
 cron -f
