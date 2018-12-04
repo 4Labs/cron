@@ -1,7 +1,11 @@
 FROM debian:stretch-slim
 
 RUN apt-get update && apt-get install -y \
-    cron \
-    curl
+        cron \
+        curl; \
+    mkdir -p /home/docker/logs; \
+    mkdir -p /home/docker/cron.d
 
-CMD ["cron", "-f"]
+COPY forlabs-cron-entrypoint /usr/local/bin/
+
+ENTRYPOINT ["forlabs-cron-entrypoint"]
