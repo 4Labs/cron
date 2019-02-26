@@ -6,4 +6,4 @@ RUN apt-get update && apt-get install -y \
     mkdir -p /home/docker/logs; \
     rm -rf /etc/cron.*/
 
-CMD ['cron', '-f']
+CMD ["cron", "-f"]
